@@ -1,14 +1,16 @@
-# Prénom Nom — Portfolio Data
+# Kévin Papama — Portfolio Data Analyst
 
-Data analyst en reconversion — analyses et outils au service de la décision.
+Data Analyst en alternance, spécialisé dans la conception et la maintenance d'un écosystème
+Power BI à grande échelle (100+ dashboards, 5 domaines métiers).
 
-📧 vous@email.com · 💼 [LinkedIn](https://linkedin.com/in/votreprofil) · 💻 [GitHub](https://github.com/whereissilver)
+📧 kevin.papama@gmail.com · 💼 [LinkedIn](https://linkedin.com/in/votreprofil) · 💻 [GitHub](https://github.com/whereissilver) · 📍 Toulouse (31200)
 
 ---
 
 ## Sommaire
 
 - [À propos](#à-propos)
+- [Expérience professionnelle](#expérience-professionnelle)
 - [Compétences](#compétences)
 - [Projets](#projets)
 - [Veille métier & technologique](#veille-métier--technologique)
@@ -18,19 +20,34 @@ Data analyst en reconversion — analyses et outils au service de la décision.
 
 ## À propos
 
-<!-- REMPLACEZ ce paragraphe par votre positionnement en 3-4 lignes -->
-Après [votre parcours précédent], je me suis formé(e) à l'analyse de données ([nom de la
-formation], [dates]). J'aime particulièrement les projets où l'analyse débouche sur une
-décision concrète : un tableau de bord qu'une équipe utilise vraiment, un modèle qui évite
-des erreurs, une recommandation qui change une pratique.
+Data Analyst en alternance, je conçois et maintiens un écosystème de reporting Power BI à
+grande échelle, en lien avec des équipes multi-sites. J'ai développé une expertise sur toute
+la chaîne de la donnée : nettoyage et transformation (Power Query, ETL), extraction et
+requêtage (SQL), analyse (Python, R), et restitution (Power BI, Excel).
 
-Je maîtrise le cycle complet d'un projet data : cadrage du besoin métier, collecte et
-nettoyage des données, analyse et modélisation, restitution (dataviz, rapport, dashboard)
-et recommandations. J'utilise principalement **Python, SQL et Power BI / Tableau**.
+Ce portfolio réunit 11 projets — issus de ma formation Data Analyst (OpenClassrooms) et de
+mon expérience en alternance — présentés comme de vrais livrables de mission : contexte,
+données, démarche, résultats, limites. L'objectif est de vous permettre d'évaluer mon niveau
+et ma façon de raisonner, pas seulement les outils utilisés.
 
-Ce portfolio réunit 10 projets — de formation et personnels — présentés comme de vrais
-livrables de mission : contexte, données, démarche, résultats, limites. L'objectif est que
-vous puissiez évaluer mon niveau et ma façon de raisonner, pas seulement les outils utilisés.
+---
+
+## Expérience professionnelle
+
+**Data Analyst — Alternance (2 ans)**
+Groupe VMS, Giroussens — vente et location de matériel BTP, agricole, industriel et loisirs
+*Septembre 2024 – Septembre 2026*
+
+Conception et maintenance d'un outil de pilotage de plus de 100 pages de dashboards Power BI
+couvrant les principaux domaines métiers (ventes, location, SAV, pièces détachées, comptabilité).
+
+- **Reporting & gouvernance des données** — tableaux de bord multi-services, suivi des flux
+  opérationnels (entrées/sorties machines, stock), monitoring des processus internes (VGP,
+  contrôle technique, maintenance), suivi financier automatisé (SIG, balance générale)
+- **Data engineering** — nettoyage, transformation et optimisation des données via Power Query
+  (ETL), amélioration de la qualité des données (doublons, valeurs manquantes, normalisation)
+- **SQL & automatisation** — requêtes SQL via Microsoft Access pour extraction rapide à la
+  demande, scripts Python pour automatisation (scraping, génération de QR codes)
 
 ---
 
@@ -38,13 +55,13 @@ vous puissiez évaluer mon niveau et ma façon de raisonner, pas seulement les o
 
 | Compétence | Illustrée par |
 |---|---|
-| Collecte & nettoyage de données | [Projet 01](#projet-01) |
-| Analyse statistique | [Projet 02](#projet-02) |
-| Modélisation / Machine Learning | [Projet 03](#projet-03) |
-| Dataviz & restitution (Power BI) | [Projet 04](#projet-04) |
-| SQL & bases de données | [Projet 05](#projet-05) |
-| Automatisation / scripting | [Projet 06](#projet-06) |
-| Communication & restitution métier | [Projet 07](#projet-07) |
+| Power BI & restitution | [Projet 06](#projet-06) · [Projet 09](#projet-09) |
+| SQL & bases de données | [Projet 02](#projet-02) · [Projet 04](#projet-04) |
+| Python / R — analyse & modélisation | [Projet 03](#projet-03) · [Projet 11](#projet-11) |
+| Excel avancé (TCD, formules, VBA) | [Projet 01](#projet-01) |
+| Qualité des données & RGPD | [Projet 07](#projet-07) |
+| ETL / Power Query | Expérience VMS |
+| Étude de marché & analyse business | [Projet 10](#projet-10) |
 
 ---
 
@@ -53,143 +70,160 @@ vous puissiez évaluer mon niveau et ma façon de raisonner, pas seulement les o
 Chaque fiche suit la même trame : **contexte → données → démarche → résultats & impact →
 limites & pistes**.
 
+> 📌 Fiches à compléter au fur et à mesure — envoyez-moi les livrables projet par projet et je
+> les intègre.
+
 ### Projet 01
-**Nettoyage & fiabilisation d'une base clients [secteur]**
-`Formation` · `Python` · `Pandas` · [Code source ↗](https://github.com/whereissilver/nom-du-repo)
+**Analyse de ventes pour un e-commerce**
+`Formation` · `Excel` · [Livrable ↗](#)
 
 | | |
 |---|---|
-| **Contexte** | [Entreprise/mission fictive] disposait d'une base clients de X lignes utilisée pour le reporting mensuel, mais les analyses produisaient des chiffres incohérents d'un mois sur l'autre. Objectif : livrer une base fiabilisée et un protocole de contrôle qualité réutilisable par l'équipe. |
-| **Données** | Export CRM au format CSV, ~X lignes. Qualité initiale : Y % de doublons, Z % de valeurs manquantes sur les champs clés, formats de dates hétérogènes. Limite : aucune donnée externe pour valider certains champs, historique limité à 18 mois. |
-| **Démarche** | Audit qualité avec Python (Pandas, ydata-profiling) pour cartographier les anomalies. Choix de Pandas plutôt qu'Excel pour la reproductibilité (script versionné vs manipulation manuelle). Règles de déduplication et normalisation documentées. Contrôle qualité automatisé et réutilisable. |
-| **Résultats & impact** | Base fiabilisée à 99 % sur les champs clés, doublons ramenés de Y % à moins de 0,5 %. Le script de contrôle qualité, relançable à chaque nouvel export, réduit le temps de fiabilisation mensuel de plusieurs heures à quelques minutes. |
-| **Limites & pistes** | Certaines anomalies (adresses mal saisies) nécessiteraient une API d'adresses pour être corrigées automatiquement. Piste : intégrer ce contrôle qualité directement dans le pipeline d'ingestion, en amont du reporting. |
+| **Contexte** | *[à compléter]* |
+| **Données** | *[à compléter]* |
+| **Démarche** | *[à compléter]* |
+| **Résultats & impact** | *[à compléter]* |
+| **Limites & pistes** | *[à compléter]* |
 
 ---
 
 ### Projet 02
-**Analyse des facteurs d'attrition client**
-`Formation` · `SQL` · `Stats` · [Rapport ↗](#)
+**Requêtage d'une base de données avec SQL**
+`Formation` · `SQL` · [Livrable ↗](#)
 
 | | |
 |---|---|
-| **Contexte** | La direction commerciale de [entreprise fictive] cherchait à comprendre pourquoi le taux de résiliation avait augmenté de X points en un an, pour prioriser ses actions de rétention. |
-| **Données** | Base contrats + historique de contacts service client (SQL), ~X clients. Bonne complétude sur les champs contractuels, faible sur les motifs de résiliation (texte libre). Limite : pas de données de satisfaction (NPS) disponibles sur la période. |
-| **Démarche** | Requêtes SQL pour construire une table d'analyse au niveau client. Analyse statistique (tests du chi², corrélations) pour identifier les variables liées à la résiliation. Choix d'une analyse exploratoire avant modélisation, pour garder des résultats interprétables par des non-techniciens. Restitution avec visualisations (Matplotlib/Seaborn). |
-| **Résultats & impact** | Trois facteurs expliquent la majorité des résiliations : plus de 2 incidents non résolus en 6 mois, absence d'usage pendant 3 mois consécutifs, fin d'engagement contractuel. Recommandation : alerte automatique dès le 2ᵉ incident non résolu. |
-| **Limites & pistes** | Analyse corrélationnelle, pas causale. Piste : modèle prédictif (voir Projet 03) et test de l'impact d'une intervention sur un échantillon pilote. |
+| **Contexte** | *[à compléter]* |
+| **Données** | *[à compléter]* |
+| **Démarche** | *[à compléter]* |
+| **Résultats & impact** | *[à compléter]* |
+| **Limites & pistes** | *[à compléter]* |
 
 ---
 
 ### Projet 03
-**[Titre du projet — modèle prédictif]**
-`Formation` · `Scikit-learn` · `ML` · [Code source ↗](#)
+**Étude de santé publique**
+`Formation` · `R` / `Python` · [Livrable ↗](#)
 
 | | |
 |---|---|
-| **Contexte** | [Quel besoin métier ? Qui le demande ?] |
-| **Données** | [Source, volumétrie, qualité, limites] |
-| **Démarche** | [Outils, méthode, étapes clés, et pourquoi ces choix] |
-| **Résultats & impact** | [Ce qui a été livré + traduction business] |
-| **Limites & pistes** | [Ce qui pourrait être amélioré / prochaine étape] |
+| **Contexte** | *[à compléter]* |
+| **Données** | *[à compléter]* |
+| **Démarche** | *[à compléter]* |
+| **Résultats & impact** | *[à compléter]* |
+| **Limites & pistes** | *[à compléter]* |
 
 ---
 
 ### Projet 04
-**[Titre du projet — dashboard de pilotage]**
-`Formation` · `Power BI` · `DAX` · [Dashboard ↗](#)
+**Création et exploitation d'une base de données immobilière**
+`Formation` · `SQL` · [Livrable ↗](#)
 
 | | |
 |---|---|
-| **Contexte** | [...] |
-| **Données** | [...] |
-| **Démarche** | [...] |
-| **Résultats & impact** | [...] |
-| **Limites & pistes** | [...] |
+| **Contexte** | *[à compléter]* |
+| **Données** | *[à compléter]* |
+| **Démarche** | *[à compléter]* |
+| **Résultats & impact** | *[à compléter]* |
+| **Limites & pistes** | *[à compléter]* |
 
 ---
 
 ### Projet 05
-**[Titre du projet personnel 1]**
-`Personnel` · `SQL` · [Code source ↗](#)
+**Optimisation de la gestion des données d'une boutique**
+`Formation` · `R` / `Python` · [Livrable ↗](#)
 
 | | |
 |---|---|
-| **Contexte** | [Quel problème personnel/concret avez-vous voulu résoudre ?] |
-| **Données** | [...] |
-| **Démarche** | [...] |
-| **Résultats & impact** | [...] |
-| **Limites & pistes** | [...] |
+| **Contexte** | *[à compléter]* |
+| **Données** | *[à compléter]* |
+| **Démarche** | *[à compléter]* |
+| **Résultats & impact** | *[à compléter]* |
+| **Limites & pistes** | *[à compléter]* |
 
 ---
 
 ### Projet 06
-**[Titre du projet personnel 2]**
-`Personnel` · `Python` · [Code source ↗](#)
+**Tableau de bord dynamique Power BI — avancement de projets**
+`Formation` · `Power BI` · [Livrable ↗](#)
 
 | | |
 |---|---|
-| **Contexte** | [...] |
-| **Données** | [...] |
-| **Démarche** | [...] |
-| **Résultats & impact** | [...] |
-| **Limites & pistes** | [...] |
+| **Contexte** | *[à compléter]* |
+| **Données** | *[à compléter]* |
+| **Démarche** | *[à compléter]* |
+| **Résultats & impact** | *[à compléter]* |
+| **Limites & pistes** | *[à compléter]* |
 
 ---
 
 ### Projet 07
-**[Titre du projet 7]**
-`Formation` · `Excel` · [Code source ↗](#)
+**Analyse des indicateurs d'égalité femmes/hommes en respect du RGPD**
+`Formation` · `KNIME` · [Livrable ↗](#)
 
 | | |
 |---|---|
-| **Contexte** | [...] |
-| **Données** | [...] |
-| **Démarche** | [...] |
-| **Résultats & impact** | [...] |
-| **Limites & pistes** | [...] |
+| **Contexte** | *[à compléter]* |
+| **Données** | *[à compléter]* |
+| **Démarche** | *[à compléter]* |
+| **Résultats & impact** | *[à compléter]* |
+| **Limites & pistes** | *[à compléter]* |
 
 ---
 
 ### Projet 08
-**[Titre du projet 8]**
-`Formation` · `Python` · [Code source ↗](#)
+**Analyse des ventes d'une librairie**
+`Formation` · `R` / `Python` · [Livrable ↗](#)
 
 | | |
 |---|---|
-| **Contexte** | [...] |
-| **Données** | [...] |
-| **Démarche** | [...] |
-| **Résultats & impact** | [...] |
-| **Limites & pistes** | [...] |
+| **Contexte** | *[à compléter]* |
+| **Données** | *[à compléter]* |
+| **Démarche** | *[à compléter]* |
+| **Résultats & impact** | *[à compléter]* |
+| **Limites & pistes** | *[à compléter]* |
 
 ---
 
 ### Projet 09
-**[Titre du projet personnel 3]**
-`Personnel` · `API` · [Code source ↗](#)
+**Étude sur l'eau potable**
+`Formation` · `Power BI` · [Livrable ↗](#)
 
 | | |
 |---|---|
-| **Contexte** | [...] |
-| **Données** | [...] |
-| **Démarche** | [...] |
-| **Résultats & impact** | [...] |
-| **Limites & pistes** | [...] |
+| **Contexte** | *[à compléter]* |
+| **Données** | *[à compléter]* |
+| **Démarche** | *[à compléter]* |
+| **Résultats & impact** | *[à compléter]* |
+| **Limites & pistes** | *[à compléter]* |
 
 ---
 
 ### Projet 10
-**[Titre du projet 10]**
-`Formation` · `Reporting` · [Code source ↗](#)
+**Étude de marché**
+`Formation` · `R` / `Python` · [Livrable ↗](#)
 
 | | |
 |---|---|
-| **Contexte** | [...] |
-| **Données** | [...] |
-| **Démarche** | [...] |
-| **Résultats & impact** | [...] |
-| **Limites & pistes** | [...] |
+| **Contexte** | *[à compléter]* |
+| **Données** | *[à compléter]* |
+| **Démarche** | *[à compléter]* |
+| **Résultats & impact** | *[à compléter]* |
+| **Limites & pistes** | *[à compléter]* |
+
+---
+
+### Projet 11
+**Détection de faux billets**
+`Formation` · `R` / `Python` · [Livrable ↗](#)
+
+| | |
+|---|---|
+| **Contexte** | *[à compléter]* |
+| **Données** | *[à compléter]* |
+| **Démarche** | *[à compléter]* |
+| **Résultats & impact** | *[à compléter]* |
+| **Limites & pistes** | *[à compléter]* |
 
 ---
 
@@ -199,32 +233,26 @@ limites & pistes**.
 
 | Outil / méthode | Ce que j'ai identifié | Source | Pourquoi ce choix |
 |---|---|---|---|
-| [Ex. Power BI — nouvelles fonctions DAX] | [Ce que l'évolution apporte concrètement] | [Blog officiel / newsletter] | [Maturité, adéquation au besoin, coût] |
-| [Ex. Plotly / Observable] | [...] | [...] | [...] |
-| [Ex. outil no-code de dataviz] | [...] | [...] | [...] |
+| *[à compléter]* | *[...]* | *[...]* | *[...]* |
 
 ### Méthodes & pratiques d'analyse
 
 | Méthode | Ce que j'ai identifié | Source | Pourquoi ce choix |
 |---|---|---|---|
-| [Ex. Data quality frameworks] | [...] | [Documentation officielle / article] | [Robustesse, adoption, facilité d'intégration] |
-| [Ex. Tests A/B, inférence causale] | [...] | [...] | [...] |
+| *[à compléter]* | *[...]* | *[...]* | *[...]* |
 
 ### IA & automatisation appliquées à la data
 
 | Outil / méthode | Ce que j'ai identifié | Source | Pourquoi ce choix |
 |---|---|---|---|
-| [Ex. Claude / Copilot pour l'analyse] | [...] | [...] | [Gain de temps mesuré, limites identifiées] |
+| *[à compléter]* | *[...]* | *[...]* | *[...]* |
 
 ### Mes sources de veille
 
-- [Ex. Newsletters : Data Elixir, Analytics Engineering Roundup...]
-- [Ex. Communautés : Kaggle, subreddits data, Slack/Discord de la promo...]
-- [Ex. Blogs éditeurs : Microsoft Power BI, dbt Labs, documentation officielle...]
-- [Ex. Conférences / podcasts...]
+- *[à compléter]*
 
 ---
 
 ## Contact
 
-📧 [vous@email.com](mailto:vous@email.com) · 💼 [LinkedIn](https://linkedin.com/in/votreprofil) · 💻 [GitHub](https://github.com/whereissilver)
+📧 [kevin.papama@gmail.com](mailto:kevin.papama@gmail.com) · 💼 [LinkedIn](https://linkedin.com/in/votreprofil) · 💻 [GitHub](https://github.com/whereissilver)
