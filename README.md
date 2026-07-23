@@ -3,7 +3,7 @@
 Data Analyst en alternance, spécialisé dans la conception et la maintenance d'un écosystème
 Power BI à grande échelle (100+ dashboards, 5 domaines métiers).
 
-📧 kevin.papama@gmail.com · 💼 [LinkedIn](https://linkedin.com/in/votreprofil) · 💻 [GitHub](https://github.com/whereissilver) · 📍 Toulouse (31200)
+📧 kevin.papama@gmail.com · 💻 [GitHub](https://github.com/WhereIsSilver) · 📍 Toulouse (31200)
 
 ---
 
@@ -72,7 +72,7 @@ limites & pistes**.
 
 ### Projet 01
 **Analyse de ventes pour un e-commerce**
-`Formation` · `Excel` · `TCD` · [Rapport marketing ↗](#) · [Fichier clients affiliés ↗](#)
+`Formation` · `Excel` · `TCD` · [Dossier du projet ↗](https://github.com/WhereIsSilver/portfolio/tree/main/Projets/1%20-%20Faites%20une%20analyse%20de%20ventes%20pour%20un%20e-commerce)
 
 | | |
 |---|---|
@@ -86,7 +86,7 @@ limites & pistes**.
 
 ### Projet 02
 **Requêtage d'une base de données avec SQL**
-`Formation` · `SQL` · `MySQL Workbench` · [Méthodologie ↗](#) · [Requêtes & résultats ↗](#)
+`Formation` · `SQL` · `MySQL Workbench` · [Dossier du projet ↗](https://github.com/WhereIsSilver/portfolio/tree/main/Projets/2%20-%20Requ%C3%AAtez%20une%20base%20de%20donn%C3%A9es%20avec%20SQL)
 
 | | |
 |---|---|
@@ -100,7 +100,7 @@ limites & pistes**.
 
 ### Projet 03
 **Étude de santé publique — sous-nutrition mondiale (données FAO)**
-`Formation` · `R` · `RMarkdown` · `ggplot2` · [Notebook R ↗](#) · [Support de présentation ↗](#)
+`Formation` · `R` · `RMarkdown` · `ggplot2` · [Dossier du projet ↗](https://github.com/WhereIsSilver/portfolio/tree/main/Projets/3%20-%20R%C3%A9alisez%20une%20%C3%A9tude%20de%20sant%C3%A9%20publique%20avec%20R%20ou%20Python)
 
 | | |
 |---|---|
@@ -114,7 +114,7 @@ limites & pistes**.
 
 ### Projet 04
 **Création et exploitation d'une base de données immobilière**
-`Formation` · `SQL` · `MySQL` · `RGPD` · [Dictionnaire de données ↗](#) · [Support de présentation ↗](#)
+`Formation` · `SQL` · `MySQL` · `RGPD` · [Dossier du projet ↗](https://github.com/WhereIsSilver/portfolio/tree/main/Projets/4%20-%20Cr%C3%A9ez%20et%20utilisez%20une%20base%20de%20donn%C3%A9es%20immobili%C3%A8re%20avec%20SQL)
 
 | | |
 |---|---|
@@ -128,7 +128,7 @@ limites & pistes**.
 
 ### Projet 05
 **Optimisation de la gestion des données d'une boutique — Bottleneck**
-`Formation` · `Python` · `Pandas` · `Plotly` · [Notebook Python ↗](#) · [Présentation CODIR ↗](#)
+`Formation` · `Python` · `Pandas` · `Plotly` · [Dossier du projet ↗](https://github.com/WhereIsSilver/portfolio/tree/main/Projets/5%20-%20Optimisez%20la%20gestion%20des%20donn%C3%A9es%20d%27une%20boutique%20avec%20R%20ou%20Python)
 
 | | |
 |---|---|
@@ -142,7 +142,7 @@ limites & pistes**.
 
 ### Projet 06
 **Tableau de bord dynamique Power BI — avancement de projets**
-`Formation` · `Power BI` · `Power Query` · `DAX` · `Gantt` · [Fichier .pbix ↗](#)
+`Formation` · `Power BI` · `Power Query` · `DAX` · `Gantt` · [Fichier .pbix ↗](https://github.com/WhereIsSilver/portfolio/tree/main/Projets/6%20-%20Cr%C3%A9ez%20un%20tableau%20de%20bord%20dynamique%20avec%20Power%20BI%20pour%20visualiser%20l%27avancement%20de%20projets)
 
 | | |
 |---|---|
@@ -156,7 +156,7 @@ limites & pistes**.
 
 ### Projet 07
 **Analyse des indicateurs d'égalité femmes/hommes en respect du RGPD**
-`Formation` · `KNIME` · `RGPD` · [Workflow KNIME ↗](#) · [Présentation ↗](#)
+`Formation` · `KNIME` · `RGPD` · [Dossier du projet ↗](https://github.com/WhereIsSilver/portfolio/tree/main/Projets/7%20-%20Analysez%20des%20indicateurs%20de%20l%27%C3%A9galit%C3%A9)
 
 | | |
 |---|---|
@@ -170,7 +170,7 @@ limites & pistes**.
 
 ### Projet 08
 **Analyse des ventes d'une librairie — Lapage**
-`Formation` · `Python` · `Pandas` · `Tests statistiques` · [Notebook Python ↗](#) · [Présentation ↗](#)
+`Formation` · `Python` · `Pandas` · `Tests statistiques` · [Dossier du projet ↗](https://github.com/WhereIsSilver/portfolio/tree/main/Projets/8%20-%20Analysez%20les%20ventes%20d%27une%20librairie)
 
 | | |
 |---|---|
@@ -184,7 +184,7 @@ limites & pistes**.
 
 ### Projet 09
 **Étude sur l'accès à l'eau potable — DWFA**
-`Formation` · `Power BI` · [Fichier .pbix ↗](#) · [Présentation ↗](#)
+`Formation` · `Power BI` · [Dossier du projet ↗](https://github.com/WhereIsSilver/portfolio/tree/main/Projets/9%20-%20Faites%20une%20%C3%A9tude%20sur%20l%27eau%20potable)
 
 | | |
 |---|---|
@@ -198,7 +198,7 @@ limites & pistes**.
 
 ### Projet 10
 **Étude de marché à l'export — La poule qui chante**
-`Formation` · `Python` · `ACP` · `Clustering` · [Notebooks Python ↗](#) · [Présentation ↗](#)
+`Formation` · `Python` · `ACP` · `Clustering` · [Dossier du projet ↗](https://github.com/WhereIsSilver/portfolio/tree/main/Projets/10%20-%20Produisez%20une%20%C3%A9tude%20de%20march%C3%A9%20avec%20R%20ou%20Python)
 
 | | |
 |---|---|
@@ -212,7 +212,7 @@ limites & pistes**.
 
 ### Projet 11
 **Détection de faux billets par Machine Learning — ONCFM**
-`Formation` · `Python` · `Scikit-learn` · `ML` · [Notebook Python ↗](#) · [Script de production ↗](#) · [Présentation ↗](#)
+`Formation` · `Python` · `Scikit-learn` · `ML` · [Dossier du projet ↗](https://github.com/WhereIsSilver/portfolio/tree/main/Projets/11%20-%20D%C3%A9tectez%20des%20faux%20billets%20avec%20R%20ou%20Python)
 
 | | |
 |---|---|
@@ -248,4 +248,4 @@ limites & pistes**.
 
 ## Contact
 
-📧 [kevin.papama@gmail.com](mailto:kevin.papama@gmail.com) · 💼 [LinkedIn](https://linkedin.com/in/votreprofil) · 💻 [GitHub](https://github.com/whereissilver)
+📧 [kevin.papama@gmail.com](mailto:kevin.papama@gmail.com) · 💻 [GitHub](https://github.com/WhereIsSilver)
