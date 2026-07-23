@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projets — Prénom Nom</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="brand"><span class="dot"></span>prenom-nom / portfolio</a>
+    <nav class="nav">
+      <a href="index.html">Accueil</a>
+      <a href="projets.html" class="active">Projets</a>
+      <a href="veille.html">Veille</a>
+      <a href="mailto:vous@email.com">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section style="padding-bottom:40px;">
+  <div class="wrap">
+    <p class="hero-eyebrow">Dossier de compétences</p>
+    <h1 style="font-size:clamp(28px,4vw,42px);">Preuves de compétences</h1>
+    <p class="lead" style="font-size:16px;">
+      Chaque fiche suit la même trame : contexte / besoin métier → données → démarche →
+      résultats &amp; impact → limites &amp; prochaines pistes. Objectif : que vous puissiez
+      évaluer mon niveau et ma façon de raisonner, pas seulement les outils utilisés.
+    </p>
+  </div>
+</section>
+
+<!-- ============================================================
+     FICHE 01 — exemple entièrement rédigé, à adapter à VOTRE projet
+     ============================================================ -->
+<article class="fiche" id="proj-01">
+  <div class="wrap">
+    <div class="fiche-head">
+      <div>
+        <p class="fiche-ref">Dossier 01 · Projet de formation</p>
+        <h3>Nettoyage &amp; fiabilisation d'une base clients [secteur]</h3>
+      </div>
+      <div class="fiche-links">
+        <a href="https://github.com/votrepseudo/nom-du-repo" target="_blank" rel="noopener">Code source ↗</a>
+        <a href="#" target="_blank" rel="noopener">Notebook / rapport ↗</a>
+      </div>
+    </div>
+
+    <div class="spec-sheet">
+      <div class="spec-row">
+        <div class="spec-label">Contexte</div>
+        <div class="spec-value">
+          [Entreprise/mission fictive] disposait d'une base clients de X lignes utilisée pour le
+          reporting mensuel, mais les analyses produisaient des chiffres incohérents d'un mois
+          sur l'autre. Objectif : livrer une base fiabilisée et un protocole de contrôle qualité
+          réutilisable par l'équipe.
+        </div>
+      </div>
+      <div class="spec-row">
+        <div class="spec-label">Données</div>
+        <div class="spec-value">
+          <ul>
+            <li>Source : export CRM au format CSV, ~X lignes, X colonnes</li>
+            <li>Qualité initiale : Y % de doublons, Z % de valeurs manquantes sur les champs clés, formats de dates hétérogènes</li>
+            <li>Limites : aucune donnée de référence externe pour valider certains champs ; historique limité à 18 mois</li>
+          </ul>
+        </div>
+      </div>
+      <div class="spec-row">
+        <div class="spec-label">Démarche</div>
+        <div class="spec-value">
+          <ul>
+            <li>Audit qualité initial avec Python (Pandas, ydata-profiling) pour cartographier les anomalies</li>
+            <li>Choix de Pandas plutôt qu'Excel : volumétrie et besoin de reproductibilité (script versionné vs manipulation manuelle)</li>
+            <li>Règles de déduplication et de normalisation documentées et commentées dans le notebook</li>
+            <li>Contrôle qualité automatisé (script réutilisable pour les prochains exports)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="spec-row">
+        <div class="spec-label">Résultats &amp; impact</div>
+        <div class="spec-value">
+          Base fiabilisée à 99 % sur les champs clés, taux de doublons ramené de Y % à moins de 0,5 %.
+          Le script de contrôle qualité a été conçu pour être relancé à chaque nouvel export,
+          ce qui réduit le temps de fiabilisation mensuel de plusieurs heures à quelques minutes.
+        </div>
+      </div>
+      <div class="spec-row">
+        <div class="spec-label">Limites &amp; pistes</div>
+        <div class="spec-value">
+          Certaines anomalies (adresses mal saisies) nécessiteraient un rapprochement avec une
+          API d'adresses pour être corrigées automatiquement. Prochaine étape envisagée :
+          intégrer ce contrôle qualité directement dans le pipeline d'ingestion, en amont du reporting.
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- ============================================================
+     FICHE 02 — deuxième exemple entièrement rédigé
+     ============================================================ -->
+<article class="fiche" id="proj-02">
+  <div class="wrap">
+    <div class="fiche-head">
+      <div>
+        <p class="fiche-ref">Dossier 02 · Projet de formation</p>
+        <h3>Analyse des facteurs d'attrition client</h3>
+      </div>
+      <div class="fiche-links">
+        <a href="#" target="_blank" rel="noopener">Code source ↗</a>
+        <a href="#" target="_blank" rel="noopener">Rapport ↗</a>
+      </div>
+    </div>
+
+    <div class="spec-sheet">
+      <div class="spec-row">
+        <div class="spec-label">Contexte</div>
+        <div class="spec-value">
+          La direction commerciale de [entreprise fictive] cherchait à comprendre pourquoi le
+          taux de résiliation avait augmenté de X points en un an, pour prioriser ses actions
+          de rétention sur les segments les plus à risque.
+        </div>
+      </div>
+      <div class="spec-row">
+        <div class="spec-label">Données</div>
+        <div class="spec-value">
+          <ul>
+            <li>Source : base contrats + historique de contacts service client (SQL), ~X clients</li>
+            <li>Qualité : bonne complétude sur les champs contractuels, faible sur les motifs de résiliation (texte libre)</li>
+            <li>Limites : pas de données de satisfaction (NPS) disponibles sur la période étudiée</li>
+          </ul>
+        </div>
+      </div>
+      <div class="spec-row">
+        <div class="spec-label">Démarche</div>
+        <div class="spec-value">
+          <ul>
+            <li>Requêtes SQL pour construire une table d'analyse au niveau client (ancienneté, usage, incidents)</li>
+            <li>Analyse statistique (tests du chi², corrélations) pour identifier les variables les plus liées à la résiliation</li>
+            <li>Choix méthodologique : analyse exploratoire d'abord, avant modélisation, pour garder des résultats interprétables et actionnables par des non-techniciens</li>
+            <li>Restitution sous forme de rapport avec visualisations (Matplotlib / Seaborn)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="spec-row">
+        <div class="spec-label">Résultats &amp; impact</div>
+        <div class="spec-value">
+          Trois facteurs expliquent la majorité des résiliations : plus de 2 incidents non résolus
+          en 6 mois, absence d'usage pendant 3 mois consécutifs, et fin d'engagement contractuel.
+          Recommandation : mettre en place une alerte automatique dès le 2ᵉ incident non résolu.
+        </div>
+      </div>
+      <div class="spec-row">
+        <div class="spec-label">Limites &amp; pistes</div>
+        <div class="spec-value">
+          Analyse corrélationnelle, pas causale — impossible d'affirmer que résoudre les incidents
+          plus vite réduirait mécaniquement l'attrition sans test contrôlé. Piste : construire un
+          modèle prédictif (voir Dossier 03) et tester l'impact d'une intervention sur un échantillon pilote.
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- ============================================================
+     FICHES 03 à 10 — squelette à dupliquer et remplir.
+     Gardez la même structure spec-sheet pour la cohérence visuelle.
+     ============================================================ -->
+
+<article class="fiche" id="proj-03">
+  <div class="wrap">
+    <div class="fiche-head">
+      <div>
+        <p class="fiche-ref">Dossier 03 · Projet de formation</p>
+        <h3>[Titre du projet — modèle prédictif]</h3>
+      </div>
+      <div class="fiche-links">
+        <a href="#" target="_blank" rel="noopener">Code source ↗</a>
+      </div>
+    </div>
+    <div class="spec-sheet">
+      <div class="spec-row"><div class="spec-label">Contexte</div><div class="spec-value">[Quel besoin métier ? Qui le demande ?]</div></div>
+      <div class="spec-row"><div class="spec-label">Données</div><div class="spec-value">[Source, volumétrie, qualité, limites]</div></div>
+      <div class="spec-row"><div class="spec-label">Démarche</div><div class="spec-value">[Outils, méthode, étapes clés, et pourquoi ces choix]</div></div>
+      <div class="spec-row"><div class="spec-label">Résultats &amp; impact</div><div class="spec-value">[Ce qui a été livré + traduction business]</div></div>
+      <div class="spec-row"><div class="spec-label">Limites &amp; pistes</div><div class="spec-value">[Ce qui pourrait être amélioré / prochaine étape]</div></div>
+    </div>
+  </div>
+</article>
+
+<article class="fiche" id="proj-04">
+  <div class="wrap">
+    <div class="fiche-head">
+      <div>
+        <p class="fiche-ref">Dossier 04 · Projet de formation</p>
+        <h3>[Titre du projet — dashboard de pilotage]</h3>
+      </div>
+      <div class="fiche-links"><a href="#" target="_blank" rel="noopener">Dashboard ↗</a></div>
+    </div>
+    <div class="spec-sheet">
+      <div class="spec-row"><div class="spec-label">Contexte</div><div class="spec-value">[...]</div></div>
+      <div class="spec-row"><div class="spec-label">Données</div><div class="spec-value">[...]</div></div>
+      <div class="spec-row"><div class="spec-label">Démarche</div><div class="spec-value">[...]</div></div>
+      <div class="spec-row"><div class="spec-label">Résultats &amp; impact</div><div class="spec-value">[...]</div></div>
+      <div class="spec-row"><div class="spec-label">Limites &amp; pistes</div><div class="spec-value">[...]</div></div>
+    </div>
+  </div>
+</article>
+
+<article class="fiche" id="proj-05">
+  <div class="wrap">
+    <div class="fiche-head">
+      <div>
+        <p class="fiche-ref">Dossier 05 · Projet personnel</p>
+        <h3>[Titre du projet personnel 1]</h3>
+      </div>
+      <div class="fiche-links"><a href="#" target="_blank" rel="noopener">Code source ↗</a></div>
+    </div>
+    <div class="spec-sheet">
+      <div class="spec-row"><div class="spec-label">Contexte</div><div class="spec-value">[Quel problème personnel/concret avez-vous voulu résoudre ?]</div></div>
+      <div class="spec-row"><div class="spec-label">Données</div><div class="spec-value">[...]</div></div>
+      <div class="spec-row"><div class="spec-label">Démarche</div><div class="spec-value">[...]</div></div>
+      <div class="spec-row"><div class="spec-label">Résultats &amp; impact</div><div class="spec-value">[...]</div></div>
+      <div class="spec-row"><div class="spec-label">Limites &amp; pistes</div><div class="spec-value">[...]</div></div>
+    </div>
+  </div>
+</article>
+
+<article class="fiche" id="proj-06">
+  <div class="wrap">
+    <div class="fiche-head">
+      <div>
+        <p class="fiche-ref">Dossier 06 · Projet personnel</p>
+        <h3>[Titre du projet personnel 2]</h3>
+      </div>
+      <div class="fiche-links"><a href="#" target="_blank" rel="noopener">Code source ↗</a></div>
+    </div>
+    <div class="spec-sheet">
+      <div class="spec-row"><div class="spec-label">Contexte</div><div class="spec-value">[...]</div></div>
+      <div class="spec-row"><div class="spec-label">Données</div><div class="spec-value">[...]</div></div>
+      <div class="spec-row"><div class="spec-label">Démarche</div><div class="spec-value">[...]</div></div>
+      <div class="spec-row"><div class="spec-label">Résultats &amp; impact</div><div class="spec-value">[...]</div></div>
+      <div class="spec-row"><div class="spec-label">Limites &amp; pistes</div><div class="spec-value">[...]</div></div>
+    </div>
+  </div>
+</article>
+
+<article class="fiche" id="proj-07">
+  <div class="wrap">
+    <div class="fiche-head">
+      <div>
+        <p class="fiche-ref">Dossier 07 · Projet de formation</p>
+        <h3>[Titre du projet 7]</h3>
+      </div>
+      <div class="fiche-links"><a href="#" target="_blank" rel="noopener">Code source ↗</a></div>
+    </div>
+    <div class="spec-sheet">
+      <div class="spec-row"><div class="spec-label">Contexte</div><div class="spec-value">[...]</div></div>
+      <div class="spec-row"><div class="spec-label">Données</div><div class="spec-value">[...]</div></div>
+      <div class="spec-row"><div class="spec-label">Démarche</div><div class="spec-value">[...]</div></div>
+      <div class="spec-row"><div class="spec-label">Résultats &amp; impact</div><div class="spec-value">[...]</div></div>
+      <div class="spec-row"><div class="spec-label">Limites &amp; pistes</div><div class="spec-value">[...]</div></div>
+    </div>
+  </div>
+</article>
+
+<article class="fiche" id="proj-08">
+  <div class="wrap">
+    <div class="fiche-head">
+      <div>
+        <p class="fiche-ref">Dossier 08 · Projet de formation</p>
+        <h3>[Titre du projet 8]</h3>
+      </div>
+      <div class="fiche-links"><a href="#" target="_blank" rel="noopener">Code source ↗</a></div>
+    </div>
+    <div class="spec-sheet">
+      <div class="spec-row"><div class="spec-label">Contexte</div><div class="spec-value">[...]</div></div>
+      <div class="spec-row"><div class="spec-label">Données</div><div class="spec-value">[...]</div></div>
+      <div class="spec-row"><div class="spec-label">Démarche</div><div class="spec-value">[...]</div></div>
+      <div class="spec-row"><div class="spec-label">Résultats &amp; impact</div><div class="spec-value">[...]</div></div>
+      <div class="spec-row"><div class="spec-label">Limites &amp; pistes</div><div class="spec-value">[...]</div></div>
+    </div>
+  </div>
+</article>
+
+<article class="fiche" id="proj-09">
+  <div class="wrap">
+    <div class="fiche-head">
+      <div>
+        <p class="fiche-ref">Dossier 09 · Projet personnel</p>
+        <h3>[Titre du projet personnel 3]</h3>
+      </div>
+      <div class="fiche-links"><a href="#" target="_blank" rel="noopener">Code source ↗</a></div>
+    </div>
+    <div class="spec-sheet">
+      <div class="spec-row"><div class="spec-label">Contexte</div><div class="spec-value">[...]</div></div>
+      <div class="spec-row"><div class="spec-label">Données</div><div class="spec-value">[...]</div></div>
+      <div class="spec-row"><div class="spec-label">Démarche</div><div class="spec-value">[...]</div></div>
+      <div class="spec-row"><div class="spec-label">Résultats &amp; impact</div><div class="spec-value">[...]</div></div>
+      <div class="spec-row"><div class="spec-label">Limites &amp; pistes</div><div class="spec-value">[...]</div></div>
+    </div>
+  </div>
+</article>
+
+<article class="fiche" id="proj-10" style="border-bottom:none;">
+  <div class="wrap">
+    <div class="fiche-head">
+      <div>
+        <p class="fiche-ref">Dossier 10 · Projet de formation</p>
+        <h3>[Titre du projet 10]</h3>
+      </div>
+      <div class="fiche-links"><a href="#" target="_blank" rel="noopener">Code source ↗</a></div>
+    </div>
+    <div class="spec-sheet">
+      <div class="spec-row"><div class="spec-label">Contexte</div><div class="spec-value">[...]</div></div>
+      <div class="spec-row"><div class="spec-label">Données</div><div class="spec-value">[...]</div></div>
+      <div class="spec-row"><div class="spec-label">Démarche</div><div class="spec-value">[...]</div></div>
+      <div class="spec-row"><div class="spec-label">Résultats &amp; impact</div><div class="spec-value">[...]</div></div>
+      <div class="spec-row"><div class="spec-label">Limites &amp; pistes</div><div class="spec-value">[...]</div></div>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 — Prénom Nom</span>
+    <span><a href="index.html">Accueil</a> · <a href="veille.html">Veille métier</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
