@@ -1,0 +1,398 @@
+---
+title: "Module_04"
+output:
+  pdf_document:
+    latex_engine: xelatex
+mainfont: "Times New Roman"
+fontsize: 10pt
+geometry: left=0.5in, right=0.5in, top=1in, bottom=1in
+date: "2024-12-14"
+---
+
+Réalisation d'une étude de santé publique avec R
+
+## Chargement des 4 fichiers
+
+```{r}
+population <- read.csv(
+  "C:\\Users\\kevin\\Documents\\OpenClassroom\\Module_04_Papama_Kevin\\DAN-P4-FAO\\population.csv",
+  fileEncoding = "UTF-8")
+dispo_alimentaire <- read.csv(
+  "C:\\Users\\kevin\\Documents\\OpenClassroom\\Module_04_Papama_Kevin\\DAN-P4-FAO\\dispo_alimentaire.csv",
+  fileEncoding = "UTF-8")
+aide_alimentaire <- read.csv(
+  "C:\\Users\\kevin\\Documents\\OpenClassroom\\Module_04_Papama_Kevin\\DAN-P4-FAO\\aide_alimentaire.csv",
+  fileEncoding = "UTF-8")
+sous_nutrition <- read.csv(
+  "C:\\Users\\kevin\\Documents\\OpenClassroom\\Module_04_Papama_Kevin\\DAN-P4-FAO\\sous_nutrition.csv",
+  fileEncoding = "UTF-8")
+```
+
+## Analyse exploratoire des fichiers
+
+```{r}
+############ 2.1 : Analyse exploratoire du fichier population
+# Afficher les 5 premières lignes de la table
+library(knitr)
+kable(head(population, 5))
+# Multiplication de la colonne valeur par 1000
+population$Valeur <- population$Valeur*1000
+# Changement du nom de la colonne Valeur par Population
+colnames(population)[3] <- "Population"
+# Afficher les 5 premières lignes de la table
+kable(head(population, 5))
+
+############ 2.2 : Analyse exploratoire du fichier disponibilité alimentaire
+# Afficher les 5 premières lignes de la table
+kable(head(dispo_alimentaire[, 1:5], 5), format = "latex", booktabs = TRUE, longtable = TRUE)
+
+# Renomer les colonnes
+colnames(dispo_alimentaire) <- c(
+  "Zone", "Produit", "Origine", "Aliments_animaux", "Autres_Utilisations",
+  "Dispo_alimentaire_Kcal_pers_jour", "Dispo_alimentaire_kg_pers_an",
+  "Dispo_matiere_grasse_g_pers_jour", "Dispo_proteines_g_pers_jour",
+  "Dispo_interieure", "Exportations_qte", "Importations_qte",
+  "Nourriture", "Pertes", "Production", "Semences",
+  "Traitement", "Variation_stock")
+# Remplacement des NaN dans le dataset par des 0
+dispo_alimentaire[is.na(dispo_alimentaire)] <- 0
+# Multiplication de toutes les lignes contenant des tonnes en Kg
+dispo_alimentaire[c(
+  "Aliments_animaux", "Autres_Utilisations","Dispo_interieure",
+  "Exportations_qte", "Importations_qte", "Nourriture", "Pertes",
+  "Production", "Semences", "Traitement",
+  "Variation_stock")] <- dispo_alimentaire[c(
+    "Aliments_animaux", "Autres_Utilisations","Dispo_interieure",
+    "Exportations_qte", "Importations_qte", "Nourriture", "Pertes",
+    "Production", "Semences", "Traitement", "Variation_stock")] * 1000000
+# Afficher les 5 premières lignes de la table
+kable(head(dispo_alimentaire[, 1:5], 5), format = "latex", booktabs = TRUE, longtable = TRUE)
+
+
+
+
+############ 2.3 : Analyse exploratoire du fichier aide alimentaire
+# Afficher les 5 premi?res lignes de la table
+kable(head(aide_alimentaire, 5))
+# Changement du nom de la colonne Pays bénéficiaire par Zone
+colnames(aide_alimentaire)[1] <- "Zone"
+# Changement du nom de la colonne Valeur par Aide_kg
+colnames(aide_alimentaire)[4] <- "Aide_kg"
+# Multiplication de la colonne Aide_alimentaire par 1000
+aide_alimentaire[4] <- aide_alimentaire[4] * 1000
+# Afficher les 5 premières lignes de la table
+kable(head(aide_alimentaire, 5))
+
+
+############ 2.4 : Analyse exploratoire du fichier sous nutrition
+# Afficher les 5 premières lignes de la table
+kable(head(sous_nutrition, 5))
+# Conversion de la colonne en numerique
+sous_nutrition$Valeur <- as.numeric(sous_nutrition$Valeur)
+# Puis remplacement des NaN en 0
+sous_nutrition$Valeur[is.na(sous_nutrition$Valeur)] <- 0
+# Changement du nom de la colonne Valeur par sous_nutrition
+colnames(sous_nutrition)[3] <- "sous_nutrition"
+# Multiplication de la colonne sous_nutrition par 1000000
+sous_nutrition$sous_nutrition<-sous_nutrition$sous_nutrition*1000000
+# Afficher les 5 premières lignes de la table
+kable(head(sous_nutrition, 5))
+```
+
+## Analyse
+
+```{r}
+############ 3.1 - Proportion de personnes en sous nutrition
+# Jointure entre la table population et la table sous nutrition, en ciblant l'année 2017 :
+sous_nutrition_2017 <- merge(
+population[population$Année == 2017, ],
+sous_nutrition[sous_nutrition$Année == "2016-2018", ], by = "Zone")
+# Affichage du dataset
+kable(head(sous_nutrition_2017,5))
+# Calcul du nombre de personnes en état de sous nutrition
+requete_1_sous_nutrition_2017_nb_personne <- sum(
+sous_nutrition_2017$sous_nutrition)
+requete_1_sous_nutrition_2017_taux <- (sum(
+sous_nutrition_2017$sous_nutrition) / sum(
+sous_nutrition_2017$Population) * 100)
+# Nombre de personnes en état de sous nutrition
+requete_1_sous_nutrition_2017_nb_personne
+# Taux de personnes en état de sous nutrition
+requete_1_sous_nutrition_2017_taux
+
+
+
+############ 3.2 - Nombre théorique de personne qui pourrait etre nourries
+# Combien mange en moyenne un etre humain ? 2200 Kcal Source => VIDAL
+# On commence par faire une jointure entre le data frame population et 
+# Dispo_alimentaire afin d'ajouter dans ce dernier la population
+nb_personnes_nourries_theorique <- dispo_alimentaire
+nb_personnes_nourries_theorique$Produit <- NULL
+nb_personnes_nourries_theorique$Origine <- NULL
+nb_personnes_nourries_theorique <- aggregate(
+  . ~ Zone, data = nb_personnes_nourries_theorique, FUN = sum)
+nb_personnes_nourries_theorique <- merge(
+  population[population$Année == "2017", ], nb_personnes_nourries_theorique,
+  by = "Zone")
+# Création de la colonne dispo_kcal et calcul des kcal disponibles mondialement
+nb_personnes_nourries_theorique$kcal_dispo_mondial <-
+  nb_personnes_nourries_theorique$Population *
+  nb_personnes_nourries_theorique$Dispo_alimentaire_Kcal_pers_jour
+# Calcul du nombre d'humains pouvant etre nourris
+requete_2_nb_kcal_theorique <- sum(nb_personnes_nourries_theorique$kcal_dispo_mondial)
+requete_2_nb_personnes_nourries_theorique <- sum(
+  nb_personnes_nourries_theorique$kcal_dispo_mondial) / 2200
+# Nombre de kcal
+requete_2_nb_kcal_theorique
+# Nombre de personnes nourries
+requete_2_nb_personnes_nourries_theorique
+# Nombre de personnes nourries taux
+requete_2_nb_personnes_nourries_theorique_taux <- requete_2_nb_personnes_nourries_theorique / sum(
+  nb_personnes_nourries_theorique$Population) *100
+requete_2_nb_personnes_nourries_theorique_taux
+
+
+
+############ 3.3 - Nombre théorique de personne qui pourrait etre nourries
+# avec les produits végétaux
+# Transfert des données avec les végétaux dans un nouveau dataframe
+nb_personnes_nourries_vegetaux <- dispo_alimentaire
+nb_personnes_nourries_vegetaux$Produit <- NULL
+nb_personnes_nourries_vegetaux <- 
+  nb_personnes_nourries_vegetaux[
+    nb_personnes_nourries_vegetaux$Origine == "vegetale", ]
+nb_personnes_nourries_vegetaux$Origine <- NULL
+nb_personnes_nourries_vegetaux <- aggregate(
+  . ~ Zone, data = nb_personnes_nourries_vegetaux, FUN = sum)
+nb_personnes_nourries_vegetaux <- merge(
+  population[population$Année == "2017", ], nb_personnes_nourries_vegetaux,
+  by = "Zone")
+# Calcul du nombre de kcal disponible pour les végétaux
+nb_personnes_nourries_vegetaux$kcal_dispo_mondial <- 
+  nb_personnes_nourries_vegetaux$Population *
+  nb_personnes_nourries_vegetaux$Dispo_alimentaire_Kcal_pers_jour
+requete_3_nb_kcal_vegetaux <- sum(
+  nb_personnes_nourries_vegetaux$kcal_dispo_mondial)
+# Calcul du nombre d'humains pouvant etre nourris avec les végétaux
+requete_3_nb_personnes_nourries_vegetaux <- sum(
+  nb_personnes_nourries_vegetaux$kcal_dispo_mondial) / 2200
+# Affichage nombre de kcal
+requete_3_nb_kcal_vegetaux
+# Affichage nombre de personnes pouvant etre nourris avec les végétaux
+requete_3_nb_personnes_nourries_vegetaux
+# Affichage nombre de personnes pouvant etre nourris avec les végétaux taux
+requete_3_nb_personnes_nourries_vegetaux_taux <- requete_3_nb_personnes_nourries_vegetaux / sum(nb_personnes_nourries_vegetaux$Population) * 100
+requete_3_nb_personnes_nourries_vegetaux_taux
+
+
+############ 3.4 - Utilisation de la disponibilit? int?rieure?
+# Calcul de la disponibilit? totale
+requete_4_disponibilité_totale <- sum(dispo_alimentaire$Dispo_interieure)
+# Cr?ation d'une boucle for pour afficher les diff?rentes valeurs en fonction 
+# des colonnes aliments pour animaux, pertes, nourritures, semences, traitement
+# et autres utilisations
+requete_4_somme <- numeric(ncol(dispo_alimentaire))
+for (i in 4:ncol(dispo_alimentaire)) {
+  requete_4_somme[i] <- sum(dispo_alimentaire[[i]])
+}
+# Affichage de la proportion
+colonnes_a_utiliser <- c(4, 5, 13, 14, 16, 17)
+requete_4_somme <- requete_4_somme[colonnes_a_utiliser]
+noms_colonnes <- colnames(dispo_alimentaire)[colonnes_a_utiliser]
+pourcentages <- round((requete_4_somme / requete_4_disponibilité_totale) * 100)
+noms_colonnes.2 <- paste(noms_colonnes, "\n", pourcentages, "%", sep="")
+barplot(requete_4_somme, 
+        names.arg = noms_colonnes.2, 
+        col = "lightblue", 
+        las = 2, 
+        main = "Répartition de la Disponibilité Intérieure",
+        ylab = "",
+        cex.names = 0.6)
+
+
+############ 3.5 - Utilisation des céréales
+# Cr?ation d'une liste avec toutes les variables
+variables_a_utiliser <- list(
+  "Blé", "Riz (Eq Blanchi)", "Orge", "Maïs", "Seigle", "Avoine",
+  "Millet", "Sorgho", "Céréales, Autres")
+# Cr?ation d'un dataframe avec les informations uniquement pour ces céréales
+dispo_alimentaire_cereales <- 
+  dispo_alimentaire[dispo_alimentaire$Produit %in% variables_a_utiliser, ]
+# Calcul de la proportion d'alimentation animale et humaine
+requete_5_proportion_alimentation_animale <- round(sum(
+  dispo_alimentaire_cereales$Aliments_animaux) /
+  sum(dispo_alimentaire_cereales$Dispo_interieure) *100)
+requete_5_proportion_alimentation_humaine <- round(sum(
+  dispo_alimentaire_cereales$Nourriture) /
+  sum(dispo_alimentaire_cereales$Dispo_interieure)*100)
+# Affichage de la proportion d'alimentation animale
+requete_5_proportion_alimentation_animale
+# Affichage de la proportion d'alimentation humaine
+requete_5_proportion_alimentation_humaine
+
+
+
+############ 3.6 - Pays avec la proportion de personnes sous-alimentée la plus forte en 2017
+# Cr?ation de la colonne proportion par pays
+sous_nutrition_2017 <- merge(
+  population[population$Année == 2017, ],
+  sous_nutrition[sous_nutrition$Année == "2016-2018", ], by = "Zone")
+sous_nutrition_2017$proportion <- sous_nutrition_2017$sous_nutrition /
+  sous_nutrition_2017$Population * 100
+# Affichage après  trie des 10 pires pays
+requete_6_top_10_pays <- head(
+  sous_nutrition_2017[order(sous_nutrition_2017$proportion, decreasing = TRUE),
+                      ], 10)
+bar_positions <- barplot(
+  requete_6_top_10_pays$proportion,
+  names.arg=requete_6_top_10_pays$Zone,
+  col="white", las=2, cex.names=0.8)
+
+text(
+  x = bar_positions,
+  y = requete_6_top_10_pays$proportion,
+  labels = paste0(round(requete_6_top_10_pays$proportion, 1), "%"),
+  pos = 1, cex = 0.8, col = "black"
+)
+
+############ 3.7 - Pays qui ont le plus bénéficié d'aide alimentaire depuis 2013
+# Calcul du total de l'aide alimentaire par pays
+requete_7_total_aide_alimentaire <- aggregate(
+  Aide_kg ~ Zone, data = aide_alimentaire, sum)
+# Affichage après trie des 10 pays qui ont bénéficié le plus de l'aide alimentaire
+requete_7_top_10_aide_alimentaire <- head(
+  requete_7_total_aide_alimentaire[order(
+    requete_7_total_aide_alimentaire$Aide_kg,
+                                         decreasing = TRUE), ],10)
+kable(requete_7_top_10_aide_alimentaire)
+requete_7_top_10_aide_alimentaire$Zone <- gsub(
+  " ", "\n", requete_7_top_10_aide_alimentaire$Zone)
+bar_positions2 <- barplot(requete_7_top_10_aide_alimentaire$Aide_kg,
+        names.arg=requete_7_top_10_aide_alimentaire$Zone,
+        col="blue", las=2, cex.names=0.6)
+
+
+
+
+############ 3.8 - Evolution des 5 pays qui ont le plus b?n?fici?s de l'aide alimentaire entre 2013 et 2016
+# Cr?ation d'un dataframe avec la zone, l'ann?e et l'aide alimentaire puis groupby sur zone et ann?e 
+requete_8_aide_alimentaire_groupbyzone <- aggregate(
+  Aide_kg ~ Zone + Année, data = aide_alimentaire, sum)
+# Cr?ation d'une liste contenant les 5 pays qui ont le plus b?n?fici?es de l'aide alimentaire
+requete_8_top_10_aide_alimentaire_groupbyzone <- head(aggregate(
+  Aide_kg ~ Zone, data = requete_8_aide_alimentaire_groupbyzone, sum)[order(
+    aggregate(Aide_kg ~ Zone, data = requete_8_aide_alimentaire_groupbyzone,
+              sum)$Aide_kg, decreasing = TRUE), ], 5)
+# On filtre sur le dataframe avec notre liste
+requete_8_filtre <- requete_8_aide_alimentaire_groupbyzone[
+  requete_8_aide_alimentaire_groupbyzone$Zone %in%
+    requete_8_top_10_aide_alimentaire_groupbyzone$Zone, ]
+# Affichage des pays avec l'aide alimentaire par ann?e
+library(ggplot2)
+ggplot(data = requete_8_filtre, aes(x = Année, y = Aide_kg,
+                                    color = Zone, group = Zone)) +
+  geom_line() +  
+  geom_point() + 
+  labs(
+    title = "Top 5 des zones recevant le plus d'aide alimentaire",
+    x = "Année", 
+    y = "Aide alimentaire (kg)",
+    color = "Zone"
+  )
+
+
+
+
+############ 3.9 - Pays avec le moins de disponibilit? par habitant
+# Calcul de la disponibilit? en kcal par personne par jour par pays
+dispo_kcal <- dispo_alimentaire
+dispo_kcal$Produit <- NULL
+dispo_kcal$Origine <- NULL
+dispo_kcal <- aggregate(. ~ Zone, data = dispo_kcal, FUN = sum)
+# Affichage des 10 pays qui ont le moins de dispo alimentaire par personne 
+dispo_kcal <- dispo_kcal[order(dispo_kcal$Dispo_alimentaire_Kcal_pers_jour), ]
+requete_9_dispo_kcal <- head(dispo_kcal,10)
+kable(requete_9_dispo_kcal[, c(1, 4)])
+
+
+
+
+############ 3.10 - Pays avec le plus de disponibilit? par habitant
+# Affichage des 10 pays qui ont le moins de dispo alimentaire par personne 
+dispo_kcal <- dispo_alimentaire
+dispo_kcal$Produit <- NULL
+dispo_kcal$Origine <- NULL
+dispo_kcal <- aggregate(. ~ Zone, data = dispo_kcal, FUN = sum)
+requete_10_dispo_kcal <- head(dispo_kcal[order(
+  dispo_kcal$Dispo_alimentaire_Kcal_pers_jour, decreasing = TRUE), ], 10)
+kable(requete_10_dispo_kcal[, c(1, 4)])
+
+
+
+############ 3.11 - Exemple de la Tha?lande pour le Manioc?
+# Cr?ation d'un dataframe avec uniquement la Tha?lande
+Dispo_manioc <- dispo_alimentaire
+Dispo_manioc <- Dispo_manioc[Dispo_manioc$Produit == "Manioc", ]
+Dispo_manioc$Produit <- NULL
+Dispo_manioc$Origine <- NULL
+Dispo_manioc <- Dispo_manioc[Dispo_manioc$Zone == "Thaïlande", ]
+# Filtrage du dataframe pour ne conserver que les lignes correspondant à la Thaïlande
+Sous_nutrition_Tha <- sous_nutrition[sous_nutrition$Zone == "Thaïlande", ]
+Sous_nutrition_Tha <- Sous_nutrition_Tha[Sous_nutrition_Tha$Année == "2016-2018", ]
+population_Tha <- population[population$Zone == "Thaïlande", ]
+population_Tha <- population_Tha[population_Tha$Année == "2017", ]
+# Calcul de la sous nutrition en Tha?lande
+Requete_11_PartSousNutrition <- Sous_nutrition_Tha$sous_nutrition / population_Tha$Population *100
+# Affichage de la sous nutrition en Thailande
+Requete_11_PartSousNutrition
+# On calcule la proportion export?e en fonction de la proportion (Production ?)
+Requete_11_exportation <- Dispo_manioc$Exportations_qte
+Requete_11_production <- Dispo_manioc$Production
+Requete_11_proportion_exporte <- Requete_11_exportation / Requete_11_production * 100
+# Affichage de la proportion exportée en fonction de la proportion
+Requete_11_proportion_exporte
+# Affichage de la proportion exportation
+Dispo_manioc <- merge(population_Tha, Dispo_manioc, by = "Zone")
+Requete_11_Dispo_Habitant <- Dispo_manioc$Population * Dispo_manioc$Dispo_alimentaire_Kcal_pers_jour
+Requete_11_Dispo_Habitant
+
+
+############ 11 - Analyse complémentaire Nombre théorique de personne qui pourrait etre nourries
+# avec les produits d'origne animale
+# Transfert des données dans un nouveau dataframe
+nb_personnes_nourries_animale <- dispo_alimentaire
+nb_personnes_nourries_animale$Produit <- NULL
+nb_personnes_nourries_animale <- 
+  nb_personnes_nourries_animale[
+    nb_personnes_nourries_animale$Origine == "animale", ]
+nb_personnes_nourries_animale$Origine <- NULL
+nb_personnes_nourries_animale <- aggregate(
+  . ~ Zone, data = nb_personnes_nourries_animale, FUN = sum)
+nb_personnes_nourries_animale <- merge(
+  population[population$Année == "2017", ], nb_personnes_nourries_animale,
+  by = "Zone")
+# Calcul du nombre de kcal disponible pour les produits d'origine animale
+nb_personnes_nourries_animale$kcal_dispo_mondial <- 
+  nb_personnes_nourries_animale$Population *
+  nb_personnes_nourries_animale$Dispo_alimentaire_Kcal_pers_jour
+requete_3_nb_kcal_animale <- sum(
+  nb_personnes_nourries_animale$kcal_dispo_mondial)
+# Calcul du nombre d'humains pouvant etre nourris avec les produits d'origine animale
+requete_3_nb_personnes_nourries_animale <- sum(
+  nb_personnes_nourries_animale$kcal_dispo_mondial) / 2200
+# Affichage nombre de kcal
+requete_3_nb_kcal_animale
+# Affichage nombre de personnes pouvant etre nourris avec les produits d'origine animale
+requete_3_nb_personnes_nourries_animale
+# Affichage nombre de personnes pouvant etre nourris avec les produits d'origine animale en taux
+requete_3_nb_personnes_nourries_animale_taux <- requete_3_nb_personnes_nourries_animale / 
+  sum(nb_personnes_nourries_animale$Population) * 100
+requete_3_nb_personnes_nourries_animale_taux
+
+```
+
+
+
+
+
+
