@@ -224,7 +224,7 @@ limites & pistes**.
 
 ---
 
-## Veille métier & technologique (Rajouter des choses et ne pas etre trop précis
+## Veille métier & technologique (Rajouter des choses et ne pas etre trop précis et Colonne à rajouter)
 
 ### Power BI, Power Query & DAX
 
