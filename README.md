@@ -231,12 +231,12 @@ limites & pistes**.
 - YouTube — [Dataseito](https://www.youtube.com/@Dataseito)
 - Reddit — [r/PowerBI](https://www.reddit.com/r/PowerBI/)
 
-*Exemple concret trouvé via ces sources :*
+*Exemples concrets trouvés via ces sources :*
 
-| Outil / technique | Ce que j'ai identifié | Source |
-|---|---|---|
-| Auto-référencement d'une requête Power Query | Technique permettant à une requête de se référencer elle-même pour conserver une colonne de notes ajoutée manuellement, sans qu'elle soit écrasée à chaque actualisation. | [Post LinkedIn — Nicolas Brabant](https://fr.linkedin.com/posts/nicolas-brabant_lauto-r%C3%A9f%C3%A9rencement-dune-requ%C3%AAte-power-activity-7371908057372647424-3IdZ) |
-| Calculs directement dans les visuels (sans mesure DAX) | Depuis mai 2026, Power BI permet d'ajouter des sommes cumulées, moyennes mobiles ou pourcentages directement dans un visuel, sans créer de mesure DAX. | [Next Decision — Nouveautés Power BI mai 2026](https://www.next-decision.fr/wiki/les-nouveautes-power-bi-mai-2026) |
+| Outil / technique | Ce que j'ai identifié | Source | Pourquoi ce choix |
+|---|---|---|---|
+| Auto-référencement d'une requête Power Query | Technique permettant à une requête de se référencer elle-même pour conserver une colonne de notes ajoutée manuellement, sans qu'elle soit écrasée à chaque actualisation. | [Post LinkedIn — Nicolas Brabant](https://fr.linkedin.com/posts/nicolas-brabant_lauto-r%C3%A9f%C3%A9rencement-dune-requ%C3%AAte-power-activity-7371908057372647424-3IdZ) | Problème rencontré concrètement en alternance : sans cette technique, toute note manuelle ajoutée sur une table est perdue au rafraîchissement suivant. |
+| Calculs directement dans les visuels (sans mesure DAX) | Depuis mai 2026, Power BI permet d'ajouter des sommes cumulées, moyennes mobiles ou pourcentages directement dans un visuel, sans créer de mesure DAX. | [Next Decision — Nouveautés Power BI mai 2026](https://www.next-decision.fr/wiki/les-nouveautes-power-bi-mai-2026) | Évite de multiplier des mesures DAX qui ne servent qu'à un affichage isolé — à tester sur mon prochain rapport. |
 
 ### Python & analyse de données
 
@@ -246,9 +246,9 @@ limites & pistes**.
 
 *Exemple concret trouvé via ces sources :*
 
-| Outil / technique | Ce que j'ai identifié | Source |
-|---|---|---|
-| Polars, alternative à Pandas | Librairie qui monte en 2026 pour l'analyse de données volumineuses, avec des gains de performance sur des jeux de données larges. | [Python in Plain English — The Python Data Analyst Stack in 2026](https://python.plainenglish.io/the-python-data-analyst-stack-in-2026-duckdb-polars-and-the-death-of-pandas-790f92b39722) |
+| Outil / technique | Ce que j'ai identifié | Source | Pourquoi ce choix |
+|---|---|---|---|
+| Polars, alternative à Pandas | Librairie qui monte en 2026 pour l'analyse de données volumineuses, avec des gains de performance sur des jeux de données larges. | [Python in Plain English — The Python Data Analyst Stack in 2026](https://python.plainenglish.io/the-python-data-analyst-stack-in-2026-duckdb-polars-and-the-death-of-pandas-790f92b39722) | Mes projets actuels restent sur des volumes raisonnables, donc pas de besoin concret aujourd'hui. Je garde cet outil en veille pour le jour où Pandas montrerait ses limites. |
 
 ### IA appliquée à l'analyse de données
 
@@ -258,9 +258,9 @@ limites & pistes**.
 
 *Exemple concret trouvé via ces sources :*
 
-| Outil | Usage / ce que j'ai identifié | Source |
-|---|---|---|
-| ChatGPT | Débogage de formules DAX, requêtes Power Query (M) et scripts Python. | Usage direct en tant qu'outil de travail |
+| Outil | Ce que j'identifie / usage concret | Source | Pourquoi ce choix |
+|---|---|---|---|
+| ChatGPT | Débogage de formules DAX, requêtes Power Query (M) et scripts Python quand une syntaxe ne fonctionne pas. | Usage direct en tant qu'outil de travail | Gain de temps réel sur le débogage, mais je vérifie systématiquement le résultat plutôt que de le copier tel quel — une formule DAX syntaxiquement correcte peut donner un résultat métier faux. |
 
 ### Mes sources de veille
 
