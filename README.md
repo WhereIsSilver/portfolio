@@ -1,8 +1,5 @@
 # Kévin Papama — Portfolio Data Analyst
 
-Data Analyst en alternance, spécialisé dans la conception et la maintenance d'un écosystème
-Power BI à grande échelle (100+ dashboards, 5 domaines métiers).
-
 📧 kevin.papama@gmail.com · 💻 [GitHub](https://github.com/WhereIsSilver) · 📍 Toulouse (31200)
 
 ---
@@ -20,15 +17,14 @@ Power BI à grande échelle (100+ dashboards, 5 domaines métiers).
 
 ## À propos
 
-Data Analyst en alternance, je conçois et maintiens un écosystème de reporting Power BI à
-grande échelle, en lien avec des équipes multi-sites. J'ai développé une expertise sur toute
-la chaîne de la donnée : nettoyage et transformation (Power Query, ETL), extraction et
-requêtage (SQL), analyse (Python, R), et restitution (Power BI, Excel).
+Étudiant en alternance, je suis le parcours Data Analyst d'OpenClassrooms
+(titre RNCP de niveau 6).
 
-Ce portfolio réunit 11 projets — issus de ma formation Data Analyst (OpenClassrooms) et de
-mon expérience en alternance — présentés comme de vrais livrables de mission : contexte,
-données, démarche, résultats, limites. L'objectif est de vous permettre d'évaluer mon niveau
-et ma façon de raisonner, pas seulement les outils utilisés.
+Ce portfolio réunit 11 projets réalisés dans le cadre d'OpenClassrooms — présentés comme
+de vrais livrables de mission : contexte, données, démarche, résultats, limites.
+
+Chez Groupe VMS, l'entreprise qui m'a accueilli pour l'alternance, je conçois et maintiens
+un écosystème de reporting Power BI.
 
 ---
 
