@@ -262,7 +262,7 @@ limites & pistes**.
 
 | Outil | Ce que j'identifie / usage concret | Source | Pourquoi ce choix |
 |---|---|---|---|
-| ChatGPT / Claude | Débogage de formules DAX, requêtes Power Query (M) et scripts Python. Je repère que la qualité des réponses dépend fortement de la précision de ma demande (contexte, format attendu, exemples) — je compte creuser les guides officiels pour mieux structurer mes prompts. | Usage direct en tant qu'outil de travail · [Documentation Anthropic](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview) · [Documentation OpenAI](https://platform.openai.com/docs/guides/prompt-engineering) | Gain de temps réel sur le débogage, mais je vérifie systématiquement le résultat plutôt que de le copier tel quel — une formule DAX syntaxiquement correcte peut donner un résultat métier faux. Anthropic et OpenAI sont les éditeurs de référence des outils que j'utilise déjà. |
+| ChatGPT / Claude | Débogage de formules DAX, requêtes Power Query (M) et scripts Python. Je repère que la qualité des réponses dépend fortement de la précision de ma demande (contexte, format attendu, exemples). | Usage direct en tant qu'outil de travail · [Documentation Anthropic](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview) · [Documentation OpenAI](https://platform.openai.com/docs/guides/prompt-engineering) | Gain de temps réel sur le débogage, mais je vérifie systématiquement le résultat plutôt que de le copier tel quel. |
 
 ---
 
