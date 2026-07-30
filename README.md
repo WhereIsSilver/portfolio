@@ -262,12 +262,6 @@ limites & pistes**.
 |---|---|---|---|
 | ChatGPT | Débogage de formules DAX, requêtes Power Query (M) et scripts Python quand une syntaxe ne fonctionne pas. | Usage direct en tant qu'outil de travail | Gain de temps réel sur le débogage, mais je vérifie systématiquement le résultat plutôt que de le copier tel quel — une formule DAX syntaxiquement correcte peut donner un résultat métier faux. |
 
-### Mes sources de veille
-
-- **LinkedIn** — comptes spécialisés Power BI / DAX / Power Query (ex. Nicolas Brabant), actualités data en général
-- **YouTube** — [Dataseito](https://www.youtube.com/@Dataseito), chaîne francophone dédiée à la data et au décisionnel (Power BI, SQL, Python)
-- **Reddit** — [r/PowerBI](https://www.reddit.com/r/PowerBI/)
-
 ---
 
 ## Contact
