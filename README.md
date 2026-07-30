@@ -253,8 +253,8 @@ limites & pistes**.
 ### IA appliquée à l'analyse de données
 
 **Mes sources de veille sur ce thème :**
-- LinkedIn
-- YouTube
+- LinkedIn (pages officielles Anthropic et OpenAI)
+- YouTube ([MachineLearnia](https://www.youtube.com/@MachineLearnia)
 - Documentation officielle Anthropic — [guide de prompt engineering](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview)
 - Documentation officielle OpenAI — [guide de prompt engineering](https://platform.openai.com/docs/guides/prompt-engineering)
 
