@@ -236,7 +236,7 @@ limites & pistes**.
 | Outil / technique | Ce que j'ai identifié | Source | Pourquoi ce choix |
 |---|---|---|---|
 | Auto-référencement d'une requête Power Query | Technique permettant à une requête de se référencer elle-même pour conserver une colonne de notes ajoutée manuellement, sans qu'elle soit écrasée à chaque actualisation. | [Post LinkedIn — Nicolas Brabant](https://fr.linkedin.com/posts/nicolas-brabant_lauto-r%C3%A9f%C3%A9rencement-dune-requ%C3%AAte-power-activity-7371908057372647424-3IdZ) | Problème rencontré concrètement en alternance : sans cette technique, toute note manuelle ajoutée sur une table est perdue au rafraîchissement suivant. |
-| Calculs directement dans les visuels (sans mesure DAX) | Depuis mai 2026, Power BI permet d'ajouter des sommes cumulées, moyennes mobiles ou pourcentages directement dans un visuel, sans créer de mesure DAX. | [Next Decision — Nouveautés Power BI mai 2026](https://www.next-decision.fr/wiki/les-nouveautes-power-bi-mai-2026) | Évite de multiplier des mesures DAX qui ne servent qu'à un affichage isolé — à tester sur mon prochain rapport. |
+| Calculs directement dans les visuels (sans mesure DAX) | Depuis mai 2026, Power BI permet d'ajouter des sommes cumulées, moyennes mobiles ou pourcentages directement dans un visuel, sans créer de mesure DAX. | [Next Decision — Nouveautés Power BI mai 2026](https://www.next-decision.fr/wiki/les-nouveautes-power-bi-mai-2026) | Évite de multiplier des mesures DAX qui ne servent qu'à un affichage isolé. |
 
 ### Python & analyse de données
 
