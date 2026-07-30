@@ -255,12 +255,15 @@ limites & pistes**.
 **Mes sources de veille sur ce thème :**
 - LinkedIn
 - YouTube
+- Documentation officielle Anthropic — [guide de prompt engineering](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview)
+- Documentation officielle OpenAI — [guide de prompt engineering](https://platform.openai.com/docs/guides/prompt-engineering)
 
 *Exemple concret trouvé via ces sources :*
 
 | Outil | Ce que j'identifie / usage concret | Source | Pourquoi ce choix |
 |---|---|---|---|
 | ChatGPT | Débogage de formules DAX, requêtes Power Query (M) et scripts Python quand une syntaxe ne fonctionne pas. | Usage direct en tant qu'outil de travail | Gain de temps réel sur le débogage, mais je vérifie systématiquement le résultat plutôt que de le copier tel quel — une formule DAX syntaxiquement correcte peut donner un résultat métier faux. |
+| Prompt engineering | Je repère que la qualité de mes réponses IA dépend fortement de la précision de ma demande (contexte, format attendu, exemples). Je compte creuser les guides officiels Anthropic/OpenAI pour structurer mes prompts plus efficacement, en particulier sur les tâches de débogage de code. | [Documentation Anthropic](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview) · [Documentation OpenAI](https://platform.openai.com/docs/guides/prompt-engineering) | Ce sont les deux éditeurs de référence (Claude, ChatGPT) que j'utilise déjà au quotidien — autant apprendre les bonnes pratiques directement à la source plutôt que via des tutoriels tiers non vérifiés. |
 
 ---
 
