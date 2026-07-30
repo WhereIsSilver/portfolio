@@ -224,28 +224,49 @@ limites & pistes**.
 
 ### Power BI, Power Query & DAX
 
-| Outil / technique | Ce que j'ai identifié | Source | Pourquoi ce choix |
-|---|---|---|---|
-| Auto-référencement d'une requête Power Query | Une technique permettant à une requête Power Query de se référencer elle-même pour conserver une colonne de notes/commentaires ajoutée manuellement sur une table, sans que cette colonne soit écrasée à chaque actualisation des données sources (ex. une table alimentée par une base SQL). | [Post LinkedIn — Nicolas Brabant](https://fr.linkedin.com/posts/nicolas-brabant_lauto-r%C3%A9f%C3%A9rencement-dune-requ%C3%AAte-power-activity-7371908057372647424-3IdZ) | Problème rencontré concrètement en alternance sur des dashboards alimentés par SQL/Access : sans cette technique, toute note ajoutée manuellement dans Excel ou Power BI est perdue au rafraîchissement suivant. |
-| Calculs directement dans les visuels (sans mesure DAX) | Depuis mai 2026, Power BI permet d'ajouter des sommes cumulées, moyennes mobiles ou pourcentages directement dans un visuel, sans créer de mesure DAX dans le modèle de données. | [Next Decision — Nouveautés Power BI mai 2026](https://www.next-decision.fr/wiki/les-nouveautes-power-bi-mai-2026) | Je crée souvent des mesures DAX ponctuelles pour un seul visuel dans mes dashboards VMS. Cette fonctionnalité m'intéresse pour alléger le modèle en évitant de multiplier des mesures qui ne servent qu'à un affichage isolé — à tester sur mon prochain rapport. |
+**Mes sources de veille sur ce thème :**
+- Blog officiel Microsoft (notes de version mensuelles de Power BI)
+- Blog Next Decision, spécialisé Power BI/DAX
+- LinkedIn — comptes spécialisés (ex. Nicolas Brabant)
+- YouTube — [Dataseito](https://www.youtube.com/@Dataseito)
+- Reddit — [r/PowerBI](https://www.reddit.com/r/PowerBI/)
+
+*Exemple concret trouvé via ces sources :*
+
+| Outil / technique | Ce que j'ai identifié | Source |
+|---|---|---|
+| Auto-référencement d'une requête Power Query | Technique permettant à une requête de se référencer elle-même pour conserver une colonne de notes ajoutée manuellement, sans qu'elle soit écrasée à chaque actualisation. | [Post LinkedIn — Nicolas Brabant](https://fr.linkedin.com/posts/nicolas-brabant_lauto-r%C3%A9f%C3%A9rencement-dune-requ%C3%AAte-power-activity-7371908057372647424-3IdZ) |
+| Calculs directement dans les visuels (sans mesure DAX) | Depuis mai 2026, Power BI permet d'ajouter des sommes cumulées, moyennes mobiles ou pourcentages directement dans un visuel, sans créer de mesure DAX. | [Next Decision — Nouveautés Power BI mai 2026](https://www.next-decision.fr/wiki/les-nouveautes-power-bi-mai-2026) |
 
 ### Python & analyse de données
 
-| Outil / technique | Ce que j'ai identifié | Source | Pourquoi ce choix |
-|---|---|---|---|
-| Polars, alternative à Pandas | Librairie Python qui monte en 2026 comme alternative à Pandas pour l'analyse de données volumineuses, avec des gains de performance significatifs sur les jeux de données larges. | [Python in Plain English — The Python Data Analyst Stack in 2026](https://python.plainenglish.io/the-python-data-analyst-stack-in-2026-duckdb-polars-and-the-death-of-pandas-790f92b39722) | Mes projets actuels restent sur des volumes raisonnables (quelques milliers à centaines de milliers de lignes), donc pas encore de besoin concret. Je garde Polars en veille pour le jour où je travaillerai sur des volumes plus importants où Pandas montrerait ses limites. |
+**Mes sources de veille sur ce thème :**
+- LinkedIn — actualités data en général
+- YouTube — [Dataseito](https://www.youtube.com/@Dataseito)
+
+*Exemple concret trouvé via ces sources :*
+
+| Outil / technique | Ce que j'ai identifié | Source |
+|---|---|---|
+| Polars, alternative à Pandas | Librairie qui monte en 2026 pour l'analyse de données volumineuses, avec des gains de performance sur des jeux de données larges. | [Python in Plain English — The Python Data Analyst Stack in 2026](https://python.plainenglish.io/the-python-data-analyst-stack-in-2026-duckdb-polars-and-the-death-of-pandas-790f92b39722) |
 
 ### IA appliquée à l'analyse de données
 
-| Outil | Ce que je suis / usage concret | Source | Critères de veille |
-|---|---|---|---|
-| ChatGPT | Usage régulier pour corriger et déboguer mes formules DAX, mes requêtes Power Query (M) et mes scripts Python quand une syntaxe ne fonctionne pas ou renvoie une erreur peu explicite. | Usage direct en tant qu'outil de travail | Gain de temps réel sur le débogage, mais je vérifie systématiquement le résultat proposé plutôt que de le copier tel quel — en DAX en particulier, une formule syntaxiquement correcte peut donner un résultat métier faux (mauvais contexte de filtre, par exemple). |
-| Assistants IA (Claude, Gemini, Copilot) | Suivi de leur évolution sur les usages data : génération et explication de formules, aide à la documentation, revue de scripts. | YouTube, LinkedIn | Fiabilité sur des tâches spécifiques à la donnée, intégration native dans les outils déjà utilisés (Excel, Power BI, VS Code) plutôt qu'un outil isolé de plus à gérer. |
+**Mes sources de veille sur ce thème :**
+- LinkedIn
+- YouTube
+
+*Exemple concret trouvé via ces sources :*
+
+| Outil | Usage / ce que j'ai identifié | Source |
+|---|---|---|
+| ChatGPT | Débogage de formules DAX, requêtes Power Query (M) et scripts Python. | Usage direct en tant qu'outil de travail |
 
 ### Mes sources de veille
 
 - **LinkedIn** — comptes spécialisés Power BI / DAX / Power Query (ex. Nicolas Brabant), actualités data en général
-- **YouTube** — chaînes dédiées à la data analyse et aux outils IA appliqués à la donnée
+- **YouTube** — [Dataseito](https://www.youtube.com/@Dataseito), chaîne francophone dédiée à la data et au décisionnel (Power BI, SQL, Python)
+- **Reddit** — [r/PowerBI](https://www.reddit.com/r/PowerBI/)
 
 ---
 
