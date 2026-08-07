@@ -1,0 +1,9 @@
+pandas
+numpy
+plotly
+seaborn
+matplotlib
+openpyxl
+ydata-profiling
+sweetviz
+jupyter
